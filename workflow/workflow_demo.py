@@ -10,7 +10,7 @@ Permission Profiles
 Administrators:
  - t1_admin: Tier 1 admin with policy_no_auto_approve profile.
  - t2_admin: Tier 2 admin with policy_auto_approve profile.
- - t3_admin: Tier 3 Admin with policy_no_auto_approve profile.
+ - t3_admin: Tier 3 Admin with policy_approver profile.
 
 SmartTasks
  - Send Mail After Submit: send an Email when changes are submitted.
