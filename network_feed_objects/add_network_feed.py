@@ -39,7 +39,7 @@ def main():
             log.error(login.error_message)
                   
         add_json_feed = client.api_call(
-            "add-network-feed", payload={  "name" : "network_feed_json", "feed-url" : f"http://{parsed_args.server}:5000/get-json", "feed-format" : "JSON", "feed-type" : "IP Address", "update-interval" : 60, "json-query" : ".objects[].ranges[]", "use-gateway-proxy" : "false", "ignore-warnings":"true"})
+            "add-network-feed", payload={  "name" : "network_feed_json", "feed-url" : f"http://{parsed_args.server}:5000/get-json", "feed-format" : "JSON", "feed-type" : "IP Address", "update-interval" : 1, "json-query" : ".objects[].ranges[]", "use-gateway-proxy" : "false", "ignore-warnings":"true"})
         
         if add_json_feed.success:
             log.info("Created JSON network feed object")
@@ -47,7 +47,7 @@ def main():
             log.error(add_json_feed.error_message)
 
         add_list_feed = client.api_call(
-            "add-network-feed", payload={  "name" : "network_feed_list", "feed-url" : f"http://{parsed_args.server}:5000/get-list", "feed-format" : "Flat List", "feed-type" : "IP Address", "fields-delimiter" : ",", "ignore-lines-that-start-with" : "#", "use-gateway-proxy" : "false", "ignore-warnings":"true"})
+            "add-network-feed", payload={  "name" : "network_feed_list", "feed-url" : f"http://{parsed_args.server}:5000/get-list", "feed-format" : "Flat List", "feed-type" : "IP Address", "fields-delimiter" : ",", "update-interval" : 1, "ignore-lines-that-start-with" : "#", "use-gateway-proxy" : "false", "ignore-warnings":"true"})
         
         if add_list_feed.success:
             log.info("Created flat list network feed object")

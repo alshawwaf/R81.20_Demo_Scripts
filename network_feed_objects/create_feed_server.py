@@ -52,7 +52,7 @@ def get_json():
         ]
     }
 
-    for ip in range(0x0a000000, 0x0a000000 + 50):
+    for ip in range(0x0a000000, 0x0a000000 + 10):
         ranges.append(str(ipaddress.IPv4Address(ip)))
     return jsonify(dc)
 
@@ -66,7 +66,7 @@ def get_list():
     ignores_lines_with_prefix += " this line should be ignoreed"  
     dc = [ignores_lines_with_prefix]    
 
-    for ip in range(0xc0a80100, 0xc0a80100 + 50):
+    for ip in range(0xc0a80100, 0xc0a80100 + 10):
         dc.append(str(ipaddress.IPv4Address(ip)))
 
     return (delimiter.join(dc))
